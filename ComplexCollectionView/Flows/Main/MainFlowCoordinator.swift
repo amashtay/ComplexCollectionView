@@ -14,6 +14,7 @@ final class MainFlowCoordinator: RootFlowCoordinator {
     // MARK: Coordinator
     
     func instantiateRootViewController() -> UIViewController {
+        
         let viewController = wireframe.createMainViewController()
         viewController.presenter.onOpenDetails = { [weak self] id in
             guard let self = self else { return }

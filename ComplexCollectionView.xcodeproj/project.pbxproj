@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E769EE62986D18500DA9E97 /* MainViewModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E769EE52986D18500DA9E97 /* MainViewModel .swift */; };
+		1E769EEC2986D33F00DA9E97 /* BatchLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E769EEB2986D33F00DA9E97 /* BatchLoadingCell.swift */; };
+		1E769EEE2986D52C00DA9E97 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E769EED2986D52C00DA9E97 /* CardCell.swift */; };
+		1E769EF02986D57D00DA9E97 /* ItemsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E769EEF2986D57D00DA9E97 /* ItemsListCell.swift */; };
 		1E784D2629857D80009A64D6 /* DetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E784D2529857D80009A64D6 /* DetailsWireframe.swift */; };
 		1E9383A82984FBB80038888B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9383A72984FBB80038888B /* AppDelegate.swift */; };
 		1E9383AC2984FBB80038888B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9383AB2984FBB80038888B /* MainViewController.swift */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E769EE52986D18500DA9E97 /* MainViewModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewModel .swift"; sourceTree = "<group>"; };
+		1E769EEB2986D33F00DA9E97 /* BatchLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchLoadingCell.swift; sourceTree = "<group>"; };
+		1E769EED2986D52C00DA9E97 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		1E769EEF2986D57D00DA9E97 /* ItemsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListCell.swift; sourceTree = "<group>"; };
 		1E784D2529857D80009A64D6 /* DetailsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWireframe.swift; sourceTree = "<group>"; };
 		1E9383A42984FBB80038888B /* ComplexCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComplexCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E9383A72984FBB80038888B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +61,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E769EE42986D0DB00DA9E97 /* MainViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1E769EE52986D18500DA9E97 /* MainViewModel .swift */,
+			);
+			path = MainViewModel;
+			sourceTree = "<group>";
+		};
+		1E769EE72986D2CA00DA9E97 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1E769EE82986D2DF00DA9E97 /* BatchLoadingCell */,
+				1E769EE92986D2ED00DA9E97 /* CardCell */,
+				1E769EEA2986D30500DA9E97 /* ItemListCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1E769EE82986D2DF00DA9E97 /* BatchLoadingCell */ = {
+			isa = PBXGroup;
+			children = (
+				1E769EEB2986D33F00DA9E97 /* BatchLoadingCell.swift */,
+			);
+			path = BatchLoadingCell;
+			sourceTree = "<group>";
+		};
+		1E769EE92986D2ED00DA9E97 /* CardCell */ = {
+			isa = PBXGroup;
+			children = (
+				1E769EED2986D52C00DA9E97 /* CardCell.swift */,
+			);
+			path = CardCell;
+			sourceTree = "<group>";
+		};
+		1E769EEA2986D30500DA9E97 /* ItemListCell */ = {
+			isa = PBXGroup;
+			children = (
+				1E769EEF2986D57D00DA9E97 /* ItemsListCell.swift */,
+			);
+			path = ItemListCell;
+			sourceTree = "<group>";
+		};
 		1E93839B2984FBB80038888B = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +152,8 @@
 		1E9383BD2984FCD10038888B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1E769EE42986D0DB00DA9E97 /* MainViewModel */,
+				1E769EE72986D2CA00DA9E97 /* Cells */,
 				1E9383AB2984FBB80038888B /* MainViewController.swift */,
 				1E9383CB29852E1F0038888B /* MainPresenter.swift */,
 				1E9383CD29852E450038888B /* MainViewIO.swift */,
@@ -222,13 +274,17 @@
 				1E9383C729852AB90038888B /* ApplicationWireframe.swift in Sources */,
 				1E9383CE29852E450038888B /* MainViewIO.swift in Sources */,
 				1E9383C4298525780038888B /* Coordinator.swift in Sources */,
+				1E769EEE2986D52C00DA9E97 /* CardCell.swift in Sources */,
 				1E9383D2298530BB0038888B /* MainFlowCoordinator.swift in Sources */,
 				1E9383D029852FD10038888B /* MainWireframe.swift in Sources */,
 				1E9383E2298555ED0038888B /* DetailsFlowCoordinator.swift in Sources */,
 				1E9383CC29852E1F0038888B /* MainPresenter.swift in Sources */,
 				1E784D2629857D80009A64D6 /* DetailsWireframe.swift in Sources */,
+				1E769EE62986D18500DA9E97 /* MainViewModel .swift in Sources */,
+				1E769EF02986D57D00DA9E97 /* ItemsListCell.swift in Sources */,
 				1E9383C02984FE4D0038888B /* ApplicationCoordinator.swift in Sources */,
 				1E9383E0298552FB0038888B /* DetailsViewController.swift in Sources */,
+				1E769EEC2986D33F00DA9E97 /* BatchLoadingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

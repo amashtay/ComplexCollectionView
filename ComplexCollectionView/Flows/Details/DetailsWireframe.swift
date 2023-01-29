@@ -9,8 +9,6 @@ import Foundation
 
 final class DetailsWireframe {
     
-    
-    
     func createViewController(configurationData: String) -> DetailsViewController {
         let viewController = DetailsViewController()
         viewController.title = configurationData
