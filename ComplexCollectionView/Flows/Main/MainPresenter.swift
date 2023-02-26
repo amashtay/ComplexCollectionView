@@ -33,8 +33,13 @@ final class MainPresenter: MainViewOutput {
             view?.update(with: viewModel)
             
             let batchData = await imitateLoadingData()
-            let batchItems = batchData.map {
-                MainViewCardViewModel(title: $0)
+            let batchItems = batchData.map { model in
+                MainViewCardViewModel(
+                    title: model,
+                    action: { [weak self] in
+                        self?.cardTouched(model)
+                    }
+                )
             }.map { MainSectionViewModel.ItemType.card($0) }
             
             viewModel = removeBatchSectionIfNeeded(from: viewModel)
@@ -49,8 +54,13 @@ final class MainPresenter: MainViewOutput {
     
     private func createViewModel() -> MainViewModel {
         let cards = (0 ... 8)
-            .map {
-                MainViewCardViewModel(title: "\($0)")
+            .map { model in
+                MainViewCardViewModel(
+                    title: "\(model)",
+                    action: { [weak self] in
+                        self?.cardTouched("\(model)")
+                    }
+                )
             }
             .map {
                 MainSectionViewModel.ItemType.card($0)
@@ -60,8 +70,8 @@ final class MainPresenter: MainViewOutput {
             MainSectionViewModel(
                 type: .list,
                 items: [
-                    .listItem(MainViewListItemViewModel(number: 0)),
-                    .listItem(MainViewListItemViewModel(number: 1)),
+                    .listItem(MainViewListItemViewModel(number: 0, action: nil)),
+                    .listItem(MainViewListItemViewModel(number: 1, action: nil)),
                 ]
             ),
             MainSectionViewModel(
@@ -107,5 +117,9 @@ final class MainPresenter: MainViewOutput {
             return viewModel.recreate(sections)
         }
         return viewModel
+    }
+    
+    private func cardTouched(_ model: String) {
+        onOpenDetails?(model)
     }
 }

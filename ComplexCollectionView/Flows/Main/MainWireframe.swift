@@ -10,16 +10,24 @@ import UIKit
 final class MainWireframe {
     
     // MARK: Main flow
-    
+        
     func createMainViewController() -> MainViewController {
         let presenter = createMainPresenter()
-        let viewController = MainViewController(presenter: presenter)
+        let customTransitionAnimator = customTransitionAnimator()
+        let viewController = MainViewController(
+            presenter: presenter,
+            animator: customTransitionAnimator
+        )
         presenter.view = viewController
         return viewController
     }
     
     private func createMainPresenter() -> MainPresenter {
         MainPresenter()
+    }
+    
+    private func customTransitionAnimator() -> CustomDetailsTransitionAnimator {
+        CustomDetailsTransitionAnimator()
     }
     
     // MARK: Details flow

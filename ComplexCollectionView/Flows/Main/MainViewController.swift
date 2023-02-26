@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     typealias Snapshot = NSDiffableDataSourceSnapshot<MainSectionViewModel, Item>
 
     let presenter: MainViewOutput
+    let animator: CustomDetailsTransitionAnimator
     
     private var collectionView: UICollectionView!
     
@@ -22,8 +23,10 @@ class MainViewController: UIViewController {
     
     // MARK: Initializer
     
-    init(presenter: MainViewOutput) {
+    init(presenter: MainViewOutput,
+         animator: CustomDetailsTransitionAnimator) {
         self.presenter = presenter
+        self.animator = animator
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -183,5 +186,31 @@ extension MainViewController: UICollectionViewDelegate {
                 self.presenter.onBatchUpdate()
             }
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch viewModel.sections[indexPath.section].items[indexPath.row] {
+        case .card(let cellModel):
+            cellModel.action?()
+        default:
+            break
+        }
+    }
+}
+
+extension MainViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController,
+                             presenting: UIViewController,
+                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard
+            let indexPath = collectionView.indexPathsForSelectedItems?.first,
+            let cell = collectionView.cellForItem(at: indexPath),
+            let cellSuperview = cell.superview
+        else {
+            return nil
+        }
+        
+        animator.originFrame = cellSuperview.convert(cell.frame, to: nil)
+        return animator
     }
 }

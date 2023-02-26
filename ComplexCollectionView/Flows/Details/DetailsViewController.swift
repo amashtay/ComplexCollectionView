@@ -9,6 +9,8 @@ import UIKit
 
 final class DetailsViewController: UIViewController {
     
+    var onClose: (() -> Void)?
+    
     // MARK: Initializer
     
     init() {
@@ -21,8 +23,25 @@ final class DetailsViewController: UIViewController {
     
     // MARK: View's lifecycle
     
+    override func loadView() {
+        super.loadView()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Close",
+            style: .plain,
+            target: self,
+            action: #selector(closeAction)
+        )
+        view.backgroundColor = UIColor.lightGray
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.gray
+    }
+    
+    // MARK: - Private
+    
+    @objc private func closeAction() {
+       onClose?()
     }
 }

@@ -25,6 +25,7 @@
 		1E9383D2298530BB0038888B /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9383D1298530BB0038888B /* MainFlowCoordinator.swift */; };
 		1E9383E0298552FB0038888B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9383DF298552FB0038888B /* DetailsViewController.swift */; };
 		1E9383E2298555ED0038888B /* DetailsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9383E1298555ED0038888B /* DetailsFlowCoordinator.swift */; };
+		1EF158CB29AB657000D8763B /* CustomDetailsTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF158CA29AB657000D8763B /* CustomDetailsTransitionAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		1E9383D1298530BB0038888B /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
 		1E9383DF298552FB0038888B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		1E9383E1298555ED0038888B /* DetailsFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsFlowCoordinator.swift; sourceTree = "<group>"; };
+		1EF158CA29AB657000D8763B /* CustomDetailsTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailsTransitionAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		1E9383BD2984FCD10038888B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1EF158C929AB655200D8763B /* CustomTransition */,
 				1E769EE42986D0DB00DA9E97 /* MainViewModel */,
 				1E769EE72986D2CA00DA9E97 /* Cells */,
 				1E9383AB2984FBB80038888B /* MainViewController.swift */,
@@ -197,6 +200,14 @@
 				1E784D2529857D80009A64D6 /* DetailsWireframe.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		1EF158C929AB655200D8763B /* CustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				1EF158CA29AB657000D8763B /* CustomDetailsTransitionAnimator.swift */,
+			);
+			path = CustomTransition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +283,7 @@
 				1E9383AC2984FBB80038888B /* MainViewController.swift in Sources */,
 				1E9383A82984FBB80038888B /* AppDelegate.swift in Sources */,
 				1E9383C729852AB90038888B /* ApplicationWireframe.swift in Sources */,
+				1EF158CB29AB657000D8763B /* CustomDetailsTransitionAnimator.swift in Sources */,
 				1E9383CE29852E450038888B /* MainViewIO.swift in Sources */,
 				1E9383C4298525780038888B /* Coordinator.swift in Sources */,
 				1E769EEE2986D52C00DA9E97 /* CardCell.swift in Sources */,

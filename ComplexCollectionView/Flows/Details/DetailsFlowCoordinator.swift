@@ -22,7 +22,14 @@ final class DetailsFlowCoordinator: IDetailsFlowCoordinator {
     
     func start(from rootViewController: UIViewController) {
         let viewController = wireframe.createViewController(configurationData: configurationData)
+        viewController.onClose = { [weak viewController] in
+            viewController?.dismiss(animated: true)
+        }
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.modalPresentationStyle = .custom
+        if let rootViewController = rootViewController as? UIViewControllerTransitioningDelegate {
+            navigationController.transitioningDelegate = rootViewController
+        }
         rootViewController.present(navigationController, animated: true)
     }
 }

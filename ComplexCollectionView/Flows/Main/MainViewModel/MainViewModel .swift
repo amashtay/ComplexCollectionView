@@ -59,9 +59,29 @@ struct MainSectionViewModel: Hashable {
 struct MainViewCardViewModel: Hashable {
     let uuid = UUID()
     let title: String
+    
+    let action: (() -> Void)?
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uuid)
+    }
+    
+    static func == (lhs: MainViewCardViewModel, rhs: MainViewCardViewModel) -> Bool {
+        lhs.uuid == rhs.uuid
+    }
 }
 
 struct MainViewListItemViewModel: Hashable {
     let uuid = UUID()
     let number: Int
+    
+    let action: (() -> Void)?
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uuid)
+    }
+    
+    static func == (lhs: MainViewListItemViewModel, rhs: MainViewListItemViewModel) -> Bool {
+        lhs.uuid == rhs.uuid
+    }
 }
